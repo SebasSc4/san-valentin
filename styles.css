@@ -11,7 +11,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; /* 🔥 centrado real al cargar */
-  overflow: hidden;
 }
 
 .container {
@@ -122,4 +121,5 @@ button {
   color: white;
   right: 10px;
 }
+
 
