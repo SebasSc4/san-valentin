@@ -9,7 +9,7 @@ envelope.addEventListener("click", () => {
   envelope.classList.toggle("open");
 
   if (!musicStarted) {
-    music.play();
+    music.play().catch(() => {});
     musicStarted = true;
   }
 });
