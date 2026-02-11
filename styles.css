@@ -6,13 +6,12 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(135deg, #ff8fa3, #ffc2d1);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 80px;
-  overflow-x: hidden;
+  align-items: center; /* 🔥 centrado real al cargar */
+  overflow: hidden;
 }
 
 .container {
@@ -46,25 +45,25 @@ body {
   transform-origin: top;
 }
 
-/* 🔥 El sobre sube MÁS cuando abre */
+/* 🔥 SOLO cuando abre, se mueve */
 .envelope.open {
-  transform: translateY(-80px);
+  transform: translateY(-70px);
 }
 
 .envelope.open .flap {
   transform: rotateX(180deg);
 }
 
-/* CARTA MÁS GRANDE */
+/* CARTA */
 
 .card {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 80px);
+  transform: translate(-50%, 60px);
   width: 95%;
   max-width: 400px;
-  min-height: 360px; /* 🔥 Más alta */
+  min-height: 340px;
   background: white;
   border-radius: 12px;
   padding: 25px;
@@ -78,7 +77,7 @@ body {
 
 .envelope.open + .card {
   opacity: 1;
-  transform: translate(-50%, 40px); /* 🔥 Más arriba */
+  transform: translate(-50%, 20px); /* 🔥 carta sube más */
 }
 
 /* COLUMNAS */
