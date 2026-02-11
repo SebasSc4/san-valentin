@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff8fa3, #ffc2d1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* SOBRE */
+
+.envelope {
+  width: 220px;
+  height: 140px;
+  background: #ff4d6d;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e63956;
+  clip-path: polygon(0 0, 50% 60%, 100% 0);
+  transition: transform 0.6s ease;
+  transform-origin: top;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+/* CARTA */
+
+.card {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 40px);
+  width: 90%;
+  max-width: 380px;
+  height: 260px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: all 0.6s ease;
+  overflow: hidden;
+}
+
+.envelope.open + .card {
+  opacity: 1;
+  transform: translate(-50%, 150px);
+}
+
+/* COLUMNAS */
+
+.card-left,
+.card-right {
+  width: 50%;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-y: auto;
+}
+
+.card-left {
+  text-align: left;
+}
+
+.card-right {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-right h3 {
+  font-size: 1rem;
+}
+
+.buttons {
+  position: relative;
+  margin-top: 15px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.yes-btn {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+.yes-btn:hover {
+  background-color: #d62839;
+}
+
+.no-btn {
+  background-color: #999;
+  color: white;
+  margin-left: 10px;
+}
