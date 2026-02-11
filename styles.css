@@ -88,10 +88,6 @@ body {
   overflow-y: auto;
 }
 
-.card-left {
-  text-align: left;
-}
-
 .card-right {
   text-align: center;
   display: flex;
@@ -99,13 +95,10 @@ body {
   justify-content: center;
 }
 
-.card-right h3 {
-  font-size: 1rem;
-}
-
 .buttons {
   position: relative;
   margin-top: 15px;
+  height: 60px;
 }
 
 button {
@@ -114,20 +107,21 @@ button {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease;
+  position: absolute;
 }
 
 .yes-btn {
   background-color: #ff4d6d;
   color: white;
-}
-
-.yes-btn:hover {
-  background-color: #d62839;
+  left: 10px;
 }
 
 .no-btn {
   background-color: #999;
   color: white;
-  margin-left: 10px;
+  right: 10px;
+}
+
+.music-container {
+  display: none;
 }
