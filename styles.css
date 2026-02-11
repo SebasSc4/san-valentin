@@ -6,20 +6,23 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #ff8fa3, #ffc2d1);
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  align-items: flex-start;
+  padding-top: 80px;
+  overflow-x: hidden;
 }
 
 .container {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   text-align: center;
 }
+
+/* SOBRE */
 
 .envelope {
   width: 220px;
@@ -43,40 +46,48 @@ body {
   transform-origin: top;
 }
 
+/* 🔥 El sobre sube MÁS cuando abre */
+.envelope.open {
+  transform: translateY(-80px);
+}
+
 .envelope.open .flap {
   transform: rotateX(180deg);
 }
 
+/* CARTA MÁS GRANDE */
+
 .card {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 40px);
-  width: 90%;
-  max-width: 380px;
-  height: 260px;
+  transform: translate(-50%, 80px);
+  width: 95%;
+  max-width: 400px;
+  min-height: 360px; /* 🔥 Más alta */
   background: white;
   border-radius: 12px;
-  padding: 20px;
+  padding: 25px;
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  gap: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   opacity: 0;
   transition: all 0.6s ease;
-  overflow: hidden;
 }
 
 .envelope.open + .card {
   opacity: 1;
-  transform: translate(-50%, 150px);
+  transform: translate(-50%, 40px); /* 🔥 Más arriba */
 }
+
+/* COLUMNAS */
 
 .card-left,
 .card-right {
   width: 50%;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .card-right {
@@ -88,12 +99,12 @@ body {
 
 .buttons {
   position: relative;
-  margin-top: 15px;
+  margin-top: 20px;
   height: 60px;
 }
 
 button {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border: none;
   border-radius: 8px;
   font-weight: bold;
