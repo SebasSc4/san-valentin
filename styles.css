@@ -47,7 +47,7 @@ body {
 
 /* 🔥 SOLO cuando abre, se mueve */
 .envelope.open {
-  transform: translateY(-70px);
+  transform: translateY(-120px);
 }
 
 .envelope.open .flap {
@@ -122,3 +122,4 @@ button {
   color: white;
   right: 10px;
 }
+
