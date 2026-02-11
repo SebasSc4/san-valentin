@@ -5,11 +5,13 @@ const music = document.getElementById("bgMusic");
 
 let musicStarted = false;
 
-envelope.addEventListener("click", () => {
+envelope.addEventListener("click", function () {
   envelope.classList.toggle("open");
 
   if (!musicStarted) {
-    music.play().catch(() => {});
+    music.play().catch(function () {
+      console.log("Autoplay bloqueado hasta interacción.");
+    });
     musicStarted = true;
   }
 });
