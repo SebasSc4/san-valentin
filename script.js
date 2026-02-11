@@ -1,7 +1,7 @@
 const envelope = document.getElementById("envelope");
 const noBtn = document.getElementById("noBtn");
 const card = document.getElementById("card");
-const player = document.getElementById("musicPlayer");
+const music = document.getElementById("bgMusic");
 
 let musicStarted = false;
 
@@ -9,7 +9,7 @@ envelope.addEventListener("click", () => {
   envelope.classList.toggle("open");
 
   if (!musicStarted) {
-    player.src += "&autoplay=1";
+    music.play();
     musicStarted = true;
   }
 });
@@ -18,7 +18,6 @@ function respuesta() {
   alert("Sabía que dirías que sí 😌💘");
 }
 
-// Botón NO que huye
 function moverBoton() {
   const cardRect = card.getBoundingClientRect();
 
